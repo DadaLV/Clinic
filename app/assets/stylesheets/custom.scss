@@ -15,6 +15,7 @@
 
 .btn {
   background-color: #3784A6;
+  border-color: white;
   color: white;
   border-radius: 6px;
 }
@@ -22,9 +23,10 @@
 body {
   background-image: url("https://res.cloudinary.com/dpz9dn6cr/image/upload/v1686511841/health-background_va4m5a.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
-h1 {
+h1, h4 {
   color: #3784A6;
 }
 
@@ -40,5 +42,11 @@ h1 {
 .navbar .navbar-toggler{
   border-color: #3784A6;
   color: #e8f0fe;
+  }
+
+  .recommendations {
+    color: #3784A6;
+    font-weight: 500;
+    font-size: 24px;
   }
   

@@ -1,14 +1,16 @@
-<div class="container m-4">
+<div class="container m-4 col-6">
   <% if @appointment.status == 'open' %>
     <%= form_with(model: @appointment) do |form| %>
+      
       <div class="field">
-        <%= form.label :recommendations %>
-        <%= form.text_area :recommendations %>
+        <%= form.label :recommendations, class: "recommendations mb-4" %>
+        <%= form.text_area :recommendations, class: "form-control", rows: 3 %>
       </div>
       
       <div class="actions">
-        <%= form.submit 'Leave Recommendation' %>
+        <%= form.submit 'Leave Recommendation', class: "btn btn-primary mt-4" %>
       </div>
+      
     <% end %>
   <% else %>
     <p>Recommendations: <%= @appointment.recommendations %></p>

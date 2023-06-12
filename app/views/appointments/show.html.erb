@@ -11,6 +11,11 @@
       </div>
     <% end %>
   <% else %>
-    <p>Recommendations: <%= @appointment.recommendations %></p>
+    <h4>Recommendations:</h4>
+    <div class="card col-lg-6">
+      <div class="card-body">
+        <%= @appointment.recommendations %>        
+      </div>
+    </div>
   <% end %>
 </div>
