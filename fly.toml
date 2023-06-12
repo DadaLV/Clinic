@@ -1,4 +1,7 @@
-# fly.toml file generated for clinic2 on 2023-06-02T10:26:44+02:00
+# fly.toml app configuration file generated for clinic3 on 2023-06-11T17:20:44+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
 app = "clinic3"
 kill_signal = "SIGINT"
@@ -9,9 +12,9 @@ processes = []
 
 [experimental]
   auto_rollback = true
-
-
-
+  cmd = []
+  entrypoint = []
+  exec = []
 
 [[services]]
   http_checks = []
@@ -40,5 +43,7 @@ processes = []
     timeout = "2s"
 
 [[statics]]
+  cache_key = "___rails_public"
   guest_path = "/rails/public"
+  processes = []
   url_prefix = "/"

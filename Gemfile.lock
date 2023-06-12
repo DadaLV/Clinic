@@ -357,6 +357,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  jquery-rails
   pg (~> 1.5)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
@@ -367,7 +368,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
-  turbo-rails (~> 1.0.0)
+  turbo-rails
   tzinfo-data
   web-console
   webdrivers

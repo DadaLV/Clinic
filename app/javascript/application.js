@@ -1,4 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import 'bootstrap'
-import './flash_messages';
-// import "bootstrap/dist/js/bootstrap.bundle"
+import "@hotwired/turbo-rails"
+import "controllers"
+import "popper"
+import "bootstrap"
+import "./flash_messages.js"
