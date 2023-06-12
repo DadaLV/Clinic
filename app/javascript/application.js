@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "popper"
 import "bootstrap"
-import "./flash_messages.js"
+
