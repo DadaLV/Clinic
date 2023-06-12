@@ -1,30 +1,30 @@
 <div class="container m-4">
-  <h1>New Appointment</h1>
+  <h4>New Appointment</h4>
 
-  <%= form_with model: @appointment, url: appointments_path, method: :post do |form| %>
-    <div class="field">
-      <%= form.label :doctor_id %>
-      <%= form.collection_select :doctor_id, @doctors, :id, :full_name_with_category, prompt: "Select a doctor" %>
+  <%= form_with model: @appointment, url: appointments_path, method: :post, class: "my-4" do |form| %>
+    <div class="form-group">
+      
+      <%= form.collection_select :doctor_id, @doctors, :id, :full_name_with_category, { prompt: "Select a doctor" }, class: "form-control mb-4 narrow-select" %>
     </div>
 
     <% if current_user&.patient? %>
       <%= form.hidden_field :patient_id, value: current_user.id %>
     <% else %>
-      <div class="field">
-        <%= form.label :patient_id %>
-        <%= form.collection_select :patient_id, @patients, :id, :full_name, prompt: "Select a patient" %>
+      <div class="form-group">
+        <%= form.label :patient_id, class: "form-label" %>
+        <%= form.collection_select :patient_id, @patients, :id, :full_name, { prompt: "Select a patient" }, class: "form-control" %>
       </div>
     <% end %>
 
     <% unless current_user.patient? %>
-      <div class="field">
-        <%= form.label :recommendations %>
-        <%= form.text_area :recommendations %>
+      <div class="form-group">
+        <%= form.label :recommendations, class: "form-label" %>
+        <%= form.text_area :recommendations, class: "form-control" %>
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= form.submit "Create Appointment" %>
+    <div class="form-group">
+      <%= form.submit "Create Appointment", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
