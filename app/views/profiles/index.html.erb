@@ -1,32 +1,46 @@
 
 <div class="container m-4 index-page">
-  <div class="m-4">
+  <div class="mt-4">
     <h1>Welcome to Our Clinic</h1>
   </div>
-  <div class="d-flex justify-content-center align-items-center m-4">
-    <div class="container" style="max-width: 300px; margin-top: 40px;">
-
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://res.cloudinary.com/dpz9dn6cr/image/upload/v1685621182/samples/imagecon-group.jpg" class="d-block w-100" alt="team1">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="container" style="max-width: 300px; margin-top: 10px;">
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <% @doctors.each_with_index do |doctor, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+                  <div class="card">
+                    <% if doctor.photo.present? %>
+                      <div class="card-img-container">
+                        <img src=<%= doctor.photo %> class="card-img-top" alt="Best Free Doctors And Nurses Png Icon - Doctor Png@seekpng.com">
+                      </div>
+                    <% else %>
+                      <div class="card-img-container">
+                        <img src="https://res.cloudinary.com/dpz9dn6cr/image/upload/v1685621175/samples/animals/three-dogs.jpg" style="max-width: 200px;" class="card-img-top" alt="dogs">
+                      </div>
+                    <% end %>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= doctor.full_name %></h5>
+                      <p class="card-text"><%= doctor.category.name %></p>
+                      <a href="#" class="btn btn-primary">Create Appointment</a>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <div class="carousel-item">
-              <img src="https://res.cloudinary.com/dpz9dn6cr/image/upload/v1685621175/samples/animals/three-dogs.jpg" class="d-block w-100" alt="dogs">
-            </div>
-            <div class="carousel-item">
-              <img src="https://res.cloudinary.com/dpz9dn6cr/image/upload/v1685621173/samples/people/boy-snow-hoodie.jpg" class="d-block w-100" alt="child">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
-  </div>  
+    </div>
+  </div>
 </div>
